@@ -2,7 +2,7 @@ import "cardbattle.dart";
 import "deckgen.dart";
 
 
-List<Card> addToPile(List<Card> pile, Card cardToBeAdded){
+List<Card> addToPile(List<Card> pile, Card cardToBeAdded, bool checkSuits){
 
   // if pile is empty
   if(pile.length == 0){
@@ -17,7 +17,7 @@ List<Card> addToPile(List<Card> pile, Card cardToBeAdded){
 
   // strongest = 1 -> card to be added is the strongest
   // strongest = 1 -> card to be added is NOT the strongest
-  int strongest = cardbattle([cardToBeAdded, topCard]);
+  int strongest = cardbattle([cardToBeAdded, topCard], checkSuits);
 
   // if the card to be added is the strongest
   if(strongest == 1){
